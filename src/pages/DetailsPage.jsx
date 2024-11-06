@@ -23,7 +23,7 @@ const DetailsPage = () => {
     };
 
     const handleCreateClick = () => {
-        navigate("/final-page");
+        navigate("/results");
     };
 
     // Accordion sections data

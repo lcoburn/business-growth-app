@@ -11,6 +11,7 @@ import {
     Maximize2,
     Volume2,
 } from "lucide-react";
+import videoImage from "../assets/images/video_image.png";
 
 const MarketingStrategy = () => {
     const navigate = useNavigate();
@@ -20,11 +21,11 @@ const MarketingStrategy = () => {
     };
 
     const handleChangeAwarenessClick = () => {
-        navigate("/change-awareness");
+        navigate("/question");
     };
 
     return (
-        <div className="min-h-screen bg-navy-900 text-white pb-16">
+        <div className="min-h-screen bg-navy-900 text-white pb-16 max-w-md mx-auto overflow-hidden">
             {/* Top Navigation */}
             <div className="flex justify-between items-center p-4">
                 <button onClick={handleBackClick}>
@@ -33,21 +34,19 @@ const MarketingStrategy = () => {
                 <span className="text-white">Your Marketing Strategy</span>
                 <Bell className="text-green-500 w-6 h-6" />
             </div>
-
             {/* Welcome Section */}
             <div className="px-4 py-2">
                 <h1 className="text-2xl font-semibold">
                     Welcome to your strategy
                 </h1>
             </div>
-
             {/* Video Player Card */}
             <div className="mx-4 bg-navy-800 rounded-xl p-3 mb-6">
                 <div className="relative rounded-lg overflow-hidden mb-2">
                     <img
-                        src="/api/placeholder/400/200"
+                        src={videoImage}
                         alt="Dr Raewyn Sleeman"
-                        className="w-full object-cover"
+                        className="w-full h-[200px] object-cover" // Added fixed height
                     />
                     <div className="absolute bottom-2 left-2 text-white">
                         <p className="font-medium">
@@ -66,7 +65,6 @@ const MarketingStrategy = () => {
                     <Volume2 className="w-5 h-5 text-white" />
                 </div>
             </div>
-
             {/* Progress Section */}
             <div className="px-4 flex justify-between items-center mb-6">
                 <div className="flex items-center gap-2">
@@ -98,7 +96,6 @@ const MarketingStrategy = () => {
                     </span>
                 </div>
             </div>
-
             {/* Strategy Items */}
             <div className="px-4 space-y-4">
                 <button
@@ -144,9 +141,8 @@ const MarketingStrategy = () => {
                     </div>
                 ))}
             </div>
-
             {/* Bottom Navigation */}
-            <div className="fixed bottom-0 left-0 right-0 bg-white py-3 px-6 flex justify-between items-center">
+            <div className="fixed bottom-0 left-0 right-0 max-w-md mx-auto bg-white py-3 px-6 flex justify-between items-center">
                 <Home className="text-gray-400 w-6 h-6" />
                 <GraduationCap className="text-gray-400 w-6 h-6" />
                 <div className="text-green-500">

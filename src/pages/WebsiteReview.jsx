@@ -15,7 +15,7 @@ const WebsiteInput = () => {
     const navigate = useNavigate();
 
     const handleNextClick = () => {
-        navigate("/next-page");
+        navigate("/details");
     };
 
     const handleBackClick = () => {

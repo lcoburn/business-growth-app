@@ -20,8 +20,8 @@ function App() {
                 <Route path="/loading" element={<LoadingScreen />} />
                 <Route path="/success" element={<SuccessPage />} />
                 <Route path="/review" element={<WebsiteReview />} />
-                <Route path="/review" element={<DetailsPage />} />
-                <Route path="/review" element={<ResultsPage />} />
+                <Route path="/details" element={<DetailsPage />} />
+                <Route path="/results" element={<ResultsPage />} />
             </Routes>
         </BrowserRouter>
     );

@@ -28,7 +28,7 @@ const LoadingScreen = () => {
     }, []);
 
     const handleResultsClick = () => {
-        navigate("/results-page");
+        navigate("/success");
     };
 
     return (

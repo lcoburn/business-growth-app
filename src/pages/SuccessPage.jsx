@@ -15,7 +15,7 @@ const SuccessPage = () => {
     const navigate = useNavigate();
 
     const handleContinueClick = () => {
-        navigate("/next-page");
+        navigate("/review");
     };
 
     return (

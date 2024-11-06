@@ -14,7 +14,7 @@ const HomePage = () => {
     const navigate = useNavigate();
 
     const handlePlanClick = () => {
-        navigate("/personalized-plan");
+        navigate("/strategy");
     };
 
     return (
