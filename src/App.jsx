@@ -1,35 +1,30 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import SplashPage from "./pages/SplashPage";
+import HomePage from "./pages/HomePage";
+import MarketingStrategy from "./pages/MarketingStrategy";
+import QuestionPage from "./pages/QuestionPage";
+import LoadingScreen from "./pages/LoadingScreen";
+import SuccessPage from "./pages/SuccessPage";
+import WebsiteReview from "./pages/WebsiteReview";
+import DetailsPage from "./pages/DetailsPage";
+import ResultsPage from "./pages/ResultsPage";
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<SplashPage />} />
+                <Route path="/home" element={<HomePage />} />
+                <Route path="/strategy" element={<MarketingStrategy />} />
+                <Route path="/question" element={<QuestionPage />} />
+                <Route path="/loading" element={<LoadingScreen />} />
+                <Route path="/success" element={<SuccessPage />} />
+                <Route path="/review" element={<WebsiteReview />} />
+                <Route path="/review" element={<DetailsPage />} />
+                <Route path="/review" element={<ResultsPage />} />
+            </Routes>
+        </BrowserRouter>
+    );
 }
 
-export default App
+export default App;
