@@ -6,7 +6,8 @@ import QuestionPage from "./pages/QuestionPage";
 import LoadingScreen from "./pages/LoadingScreen";
 import SuccessPage from "./pages/SuccessPage";
 import WebsiteReview from "./pages/WebsiteReview";
-import DetailsPage from "./pages/DetailsPage";
+import DetailsPage1 from "./pages/DetailsPage1";
+import DetailsPage2 from "./pages/DetailsPage2";
 import ResultsPage from "./pages/ResultsPage";
 
 function App() {
@@ -20,7 +21,8 @@ function App() {
                 <Route path="/loading" element={<LoadingScreen />} />
                 <Route path="/success" element={<SuccessPage />} />
                 <Route path="/review" element={<WebsiteReview />} />
-                <Route path="/details" element={<DetailsPage />} />
+                <Route path="/details1" element={<DetailsPage1 />} />
+                <Route path="/details2" element={<DetailsPage2 />} />
                 <Route path="/results" element={<ResultsPage />} />
             </Routes>
         </BrowserRouter>

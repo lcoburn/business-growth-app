@@ -27,6 +27,10 @@ const LoadingScreen = () => {
         return () => clearInterval(timer);
     }, []);
 
+    const handleBackClick = () => {
+        navigate(-1);
+    };
+
     const handleResultsClick = () => {
         navigate("/success");
     };
@@ -36,7 +40,9 @@ const LoadingScreen = () => {
             {/* Top Navigation */}
             <div className="flex justify-between items-center p-4">
                 <div className="flex items-center">
-                    <ChevronLeft className="text-green-500 w-6 h-6" />
+                    <button onClick={handleBackClick}>
+                        <ChevronLeft className="text-green-500 w-6 h-6" />
+                    </button>{" "}
                     <span className="ml-2">Creating Strategy</span>
                 </div>
                 <Bell className="text-green-500 w-6 h-6" />
@@ -86,7 +92,7 @@ const LoadingScreen = () => {
                 {showButton && (
                     <button
                         onClick={handleResultsClick}
-                        className="bg-green-500 text-white px-8 py-3 rounded-lg font-medium transition-all duration-300 ease-in-out transform hover:bg-green-600"
+                        className="bg-[#62A157] text-white px-8 py-3 rounded-lg font-medium transition-all duration-300 ease-in-out transform hover:bg-green-600"
                     >
                         See Results with Ads
                     </button>

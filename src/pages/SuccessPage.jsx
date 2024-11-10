@@ -62,14 +62,15 @@ const SuccessPage = () => {
                 <div className="space-y-3">
                     <button
                         onClick={handleContinueClick}
-                        className="w-full bg-green-500 hover:bg-green-600 text-white font-medium py-3 px-4 rounded-lg transition-colors"
+                        className="w-full bg-[#62A157] text-white font-medium py-3 px-4 rounded-lg transition-colors"
+                        disabled
                     >
                         Continue Building Strategy with Ads
                     </button>
 
                     <button
-                        className="w-full bg-white text-navy-900 font-medium py-3 px-4 rounded-lg cursor-not-allowed opacity-80"
-                        disabled
+                        onClick={handleContinueClick}
+                        className="w-full bg-white hover:bg-gray-100 text-navy-900 font-medium py-3 px-4 rounded-lg"
                     >
                         Review & Read Change Awareness with Ads
                     </button>
