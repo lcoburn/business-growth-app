@@ -1,8 +1,10 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SplashPage from "./pages/SplashPage";
+import OnboardingPage from "./pages/OnboardingPage";
 import HomePage from "./pages/HomePage";
 import MarketingStrategy from "./pages/MarketingStrategy";
-import QuestionPage from "./pages/QuestionPage";
+import Question1Page from "./pages/Question1Page";
+import Question2Page from "./pages/Question2Page";
 import LoadingScreen from "./pages/LoadingScreen";
 import SuccessPage from "./pages/SuccessPage";
 import WebsiteReview from "./pages/WebsiteReview";
@@ -15,9 +17,11 @@ function App() {
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<SplashPage />} />
+                <Route path="/onboard" element={<OnboardingPage />} />
                 <Route path="/home" element={<HomePage />} />
                 <Route path="/strategy" element={<MarketingStrategy />} />
-                <Route path="/question" element={<QuestionPage />} />
+                <Route path="/question1" element={<Question1Page />} />
+                <Route path="/question2" element={<Question2Page />} />
                 <Route path="/loading" element={<LoadingScreen />} />
                 <Route path="/success" element={<SuccessPage />} />
                 <Route path="/review" element={<WebsiteReview />} />

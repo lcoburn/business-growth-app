@@ -28,6 +28,7 @@ const DetailsPage1 = () => {
     };
 
     const handleCreateClick = () => {
+        // Navigate to ResultsPage without calling `/create`
         navigate("/results");
     };
 

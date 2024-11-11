@@ -21,7 +21,10 @@ const MarketingStrategy = () => {
     };
 
     const handleChangeAwarenessClick = () => {
-        navigate("/question");
+        navigate("/question1");
+    };
+    const handleOnlineStoreClick = () => {
+        navigate("/question2");
     };
 
     return (
@@ -119,32 +122,44 @@ const MarketingStrategy = () => {
                         <ChevronLeft className="rotate-180 text-green-500" />
                     </button>
 
-                    {[
-                        "Competition Awareness",
-                        "Business Personality",
-                        "Service Improvements",
-                    ].map((item, index) => (
-                        <div
-                            key={item}
-                            className="w-full bg-white rounded-lg p-4 flex items-center justify-between text-navy-900"
-                        >
-                            <div className="flex items-center gap-3">
-                                <div className="text-green-500">👥</div>
-                                <div className="text-left">
-                                    <p className="font-medium">{item}</p>
-                                    <p className="text-sm text-gray-500">
-                                        {index === 0 &&
-                                            "How to build customer confidence."}
-                                        {index === 1 &&
-                                            "Why customers choose your business."}
-                                        {index === 2 &&
-                                            "Create an advantage over your competitors"}
-                                    </p>
-                                </div>
+                    <button
+                        onClick={handleOnlineStoreClick}
+                        className="w-full bg-white rounded-lg p-4 flex items-center justify-between text-navy-900"
+                    >
+                        <div className="flex items-center gap-3">
+                            <div className="text-green-500">🖥️</div>
+                            <div className="text-left">
+                                <p className="font-medium">Online Store</p>
+                                <p className="text-sm text-gray-500">
+                                    Design and content that increases sales.
+                                </p>
                             </div>
-                            <ChevronLeft className="rotate-180 text-green-500" />
                         </div>
-                    ))}
+                        <ChevronLeft className="rotate-180 text-green-500" />
+                    </button>
+
+                    {["Competition Awareness", "Business Personality"].map(
+                        (item, index) => (
+                            <div
+                                key={item}
+                                className="w-full bg-white rounded-lg p-4 flex items-center justify-between text-navy-900"
+                            >
+                                <div className="flex items-center gap-3">
+                                    <div className="text-green-500">👥</div>
+                                    <div className="text-left">
+                                        <p className="font-medium">{item}</p>
+                                        <p className="text-sm text-gray-500">
+                                            {index === 0 &&
+                                                "How to build customer confidence."}
+                                            {index === 1 &&
+                                                "Why customers choose your business."}
+                                        </p>
+                                    </div>
+                                </div>
+                                <ChevronLeft className="rotate-180 text-green-500" />
+                            </div>
+                        )
+                    )}
                 </div>
                 {/* Bottom Navigation */}
                 <div className="fixed bottom-0 left-0 right-0 max-w-md mx-auto bg-white py-3 px-6 flex justify-between items-center">

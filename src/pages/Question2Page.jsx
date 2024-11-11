@@ -11,7 +11,7 @@ import {
     Info,
 } from "lucide-react";
 
-const QuestionPage = () => {
+const Question2Page = () => {
     const navigate = useNavigate();
 
     const handleAgreeClick = () => {
@@ -53,38 +53,43 @@ const QuestionPage = () => {
                 </h1>
 
                 {/* Question Card */}
-                <div className="bg-white rounded-xl p-6 text-navy-900">
+                <div className="bg-white rounded-xl p-6 text-navy-900 text-base font-sans">
                     <div className="flex justify-between items-start mb-4">
-                        <p className="text-sm text-gray-600">
-                            Change Awareness questions... same as currently
+                        <p className="text-base text-navy-900">
+                            Over the past few years, have you felt that: Your
+                            local market is changing quickly?
                         </p>
-                        <Info className="w-5 h-5 text-gray-400" />
+                        <Info className="w-5 h-5 text-navy-900" />
                     </div>
 
                     <div className="space-y-4">
-                        <p className="text-gray-800">Absum lipsum...</p>
-                        <p className="text-gray-800">
-                            Lorem ipsum, dolor sit amet...
+                        <p className="text-base text-navy-900">
+                            Customers often want new services?
                         </p>
-                        <p className="text-gray-600">
-                            consectetur adipiscing elit. Sed.
+                        <p className="text-base text-navy-900">
+                            The local market is always evolving?
+                        </p>
+                        <p className="text-base text-navy-900">
+                            Your business environment looks very different each
+                            year? [Click the circle 'i' icon for more
+                            information and tips on answering.]
                         </p>
                     </div>
 
                     {/* Answer Section */}
                     <div className="mt-8">
-                        <p className="text-sm text-gray-600 mb-3">
+                        <p className="text-base text-navy-900 mb-3">
                             Choose 'Agree' or 'Disagree'
                         </p>
                         <div className="flex gap-3">
                             <button
                                 onClick={handleAgreeClick}
-                                className="flex-1 bg-gray-100 hover:bg-green-50 text-gray-800 font-medium py-2 px-4 rounded-full transition-colors"
+                                className="flex-1 bg-white hover:bg-gray-600 text-black border border-black font-medium py-2 px-4 rounded-full transition-colors"
                             >
                                 Agree
                             </button>
                             <button
-                                className="flex-1 bg-gray-100 text-gray-800 font-medium py-2 px-4 rounded-full cursor-not-allowed"
+                                className="flex-1 bg-white text-black border border-black font-medium py-2 px-4 rounded-full cursor-not-allowed"
                                 disabled
                             >
                                 Disagree
@@ -106,4 +111,4 @@ const QuestionPage = () => {
     );
 };
 
-export default QuestionPage;
+export default Question2Page;

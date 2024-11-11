@@ -16,7 +16,7 @@ const SplashPage = () => {
 
     const handleScreenTouch = () => {
         if (isEnabled) {
-            navigate("/home");
+            navigate("/onboard");
         }
     };
 
@@ -55,7 +55,7 @@ const SplashPage = () => {
                 <div
                     onClick={(e) => {
                         e.stopPropagation();
-                        if (isEnabled) navigate("/home");
+                        if (isEnabled) navigate("/onboard");
                     }}
                     className="absolute bottom-8 right-8 w-12 h-12 bg-white rounded-full flex items-center justify-center animate-pulse hover:bg-gray-100 transition-colors z-10"
                 >
