@@ -29,7 +29,7 @@ const DetailsPage1 = () => {
 
     const handleCreateClick = () => {
         // Navigate to ResultsPage without calling `/create`
-        navigate("/results");
+        navigate("/results1");
     };
 
     // Accordion sections data
@@ -61,7 +61,7 @@ const DetailsPage1 = () => {
                     <button onClick={handleBackClick}>
                         <ChevronLeft className="text-green-500 w-6 h-6" />
                     </button>
-                    <span>Change Awareness 1: Do</span>
+                    <span>Change Awareness: Do</span>
                 </div>
                 <Bell className="text-green-500 w-6 h-6" />
             </div>
@@ -144,7 +144,7 @@ const DetailsPage1 = () => {
                                                             </p>
                                                         </div>
                                                     </div>
-                                                    <button className="bg-green-500 text-white px-4 py-1 rounded-md">
+                                                    <button className="bg-[#62A157] text-white px-4 py-1 rounded-md">
                                                         {" "}
                                                         {/* Set to black */}
                                                         DIY
@@ -183,7 +183,7 @@ const DetailsPage1 = () => {
                                                         onClick={
                                                             handleCreateClick
                                                         }
-                                                        className="bg-green-500 text-white px-4 py-1 rounded-md"
+                                                        className="bg-[#62A157] text-white px-4 py-1 rounded-md"
                                                     >
                                                         {" "}
                                                         {/* Set to black */}
@@ -218,7 +218,7 @@ const DetailsPage1 = () => {
                                                             </p>
                                                         </div>
                                                     </div>
-                                                    <button className="bg-green-500 text-white px-4 py-1 rounded-md">
+                                                    <button className="bg-[#62A157] text-white px-4 py-1 rounded-md">
                                                         {" "}
                                                         {/* Set to black */}
                                                         URL

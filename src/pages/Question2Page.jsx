@@ -21,16 +21,19 @@ const Question2Page = () => {
     };
 
     const handleNextClick = () => {
-        console.log("Next clicked:", { hasWebsite, websiteUrl, isNextEnabled });
+        // Save to localStorage
+        localStorage.setItem(
+            "websiteInfo",
+            JSON.stringify({
+                hasWebsite: hasWebsite,
+                websiteUrl: websiteUrl,
+            })
+        );
 
         if (!hasWebsite) {
-            console.log("No website - navigating to loading2");
             navigate("/loading2");
         } else if (websiteUrl.trim()) {
-            console.log("Has website - navigating to loading2");
             navigate("/loading2");
-        } else {
-            console.log("URL required but not provided");
         }
     };
 

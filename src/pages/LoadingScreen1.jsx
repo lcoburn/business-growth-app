@@ -32,7 +32,7 @@ const LoadingScreen = () => {
     };
 
     const handleResultsClick = () => {
-        navigate("/success");
+        navigate("/success1");
     };
 
     return (

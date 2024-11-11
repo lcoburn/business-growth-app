@@ -13,6 +13,7 @@ import {
     Zap,
     ExternalLink,
 } from "lucide-react";
+import { getWebsiteInfo } from "../utils/websiteInfo"; // Add this import
 
 const DetailsPage2 = () => {
     const navigate = useNavigate();
@@ -23,32 +24,37 @@ const DetailsPage2 = () => {
         do: true, // Since 'do' starts open
     });
 
+    // Load website info
+    const websiteInfo = getWebsiteInfo();
+    console.log(websiteInfo);
+
     const handleBackClick = () => {
         navigate(-1);
     };
 
     const handleCreateClick = () => {
-        navigate("/results");
+        navigate("/results2");
     };
 
     // Accordion sections data
     const sections = {
         know: {
             title: "Know: What you need to know",
-            content:
-                "Understanding how our business environment changes helps us stay successful. When we know what's happening around us, we can make better choices for our business.\n\nKey Ideas\n\n- Our local market is always changing\n- Customer needs keep evolving\n- Being different from other businesses is important\n- Customer feedback shows us what to improve\n\nProblems if We Don't Pay Attention\n\n- Our business falls behind others\n- We lose customers to other businesses\n- We miss opportunities to grow\n- Our income goes down\n\nBenefits When We Pay Attention\n\n- Make up to 15% more money than other businesses\n- Keep customers happy\n- Stay ahead of changes\n- Keep being special to customers",
+            content: websiteInfo?.hasWebsite
+                ? "Understanding how our website impacts our business success is crucial. Regular reviews help us stay competitive and meet customer needs.\n\nKey Ideas\n\n- 90% of customers search online before buying\n- Having a good website helps us compete better\n- Regular reviews show what needs updating\n- Customer feedback guides improvements"
+                : "Understanding how not having a website impacts our business is crucial. Most customers search online first.\n\nKey Ideas\n\n- Most customers (90%+) look online first when they want to buy something\n- Only half of small businesses have websites\n- Having a website gives us an advantage\n- We're missing potential customers without one",
         },
-
         plan: {
             title: "Plan: What you need to plan",
-            content:
-                "Making a plan helps us stay organized and make sure we're doing the right things to keep our business strong.\n\nPlanning Areas\n\n- Looking at customer feedback\n- Finding what makes us special\n- Choosing what to improve\n- Telling customers about improvements\n\nProblems Without Planning\n\n- Miss important customer feedback\n- Waste time on wrong improvements\n- Lose track of good ideas\n- Miss chances to tell customers about changes\n\nBenefits of Good Planning\n\n- Clear direction for improvements\n- Better use of time and money\n- Organized way to grow\n- Happy customers who know we listen",
+            content: websiteInfo?.hasWebsite
+                ? `We need to review ${websiteInfo.websiteUrl} regularly to ensure it serves our customers well.\n\nPlanning Areas\n\n- Website content review\n- Technical performance check\n- Customer experience assessment\n- Update schedule planning`
+                : "Planning our new website carefully helps us create something that works well.\n\nPlanning Areas\n\n- Customer Information needs\n- Business story and services\n- Technical requirements\n- Mobile-friendly design",
         },
-
         do: {
             title: "Do: How to do it",
-            content:
-                "Taking action keeps our business growing and shows customers we care about making things better.\n\nAction Areas\n\n- Collecting customer feedback\n- Making small improvements\n- Sharing news with customers\n- Checking if changes worked\n\nProblems Without Action\n\n- Customers feel ignored\n- Fall behind other businesses\n- Miss chances to improve\n- Lose customers over time\n\nBenefits of Taking Action\n\n- Happier customers\n- Better business results\n- Stay special to customers\n- Keep growing steadily",
+            content: websiteInfo?.hasWebsite
+                ? `Let's review ${websiteInfo.websiteUrl} and make necessary improvements.\n\nAction Areas\n\n- Content updates\n- Technical updates\n- Customer trust building\n- Regular maintenance schedule`
+                : "Taking action to create our website helps us get more customers.\n\nAction Areas\n\n- Website setup\n- Customer connection\n- Website safety\n- Professional appearance",
         },
     };
 
@@ -60,7 +66,7 @@ const DetailsPage2 = () => {
                     <button onClick={handleBackClick}>
                         <ChevronLeft className="text-green-500 w-6 h-6" />
                     </button>
-                    <span>Change Awareness: Do</span>
+                    <span>Online Store: Do</span>
                 </div>
                 <Bell className="text-green-500 w-6 h-6" />
             </div>
@@ -143,7 +149,7 @@ const DetailsPage2 = () => {
                                                             </p>
                                                         </div>
                                                     </div>
-                                                    <button className="bg-green-500 text-white px-4 py-1 rounded-md">
+                                                    <button className="bg-[#62A157] text-white px-4 py-1 rounded-md">
                                                         {" "}
                                                         {/* Set to black */}
                                                         DIY
@@ -182,7 +188,7 @@ const DetailsPage2 = () => {
                                                         onClick={
                                                             handleCreateClick
                                                         }
-                                                        className="bg-green-500 text-white px-4 py-1 rounded-md"
+                                                        className="bg-[#62A157] text-white px-4 py-1 rounded-md"
                                                     >
                                                         {" "}
                                                         {/* Set to black */}
@@ -217,7 +223,7 @@ const DetailsPage2 = () => {
                                                             </p>
                                                         </div>
                                                     </div>
-                                                    <button className="bg-green-500 text-white px-4 py-1 rounded-md">
+                                                    <button className="bg-[#62A157] text-white px-4 py-1 rounded-md">
                                                         {" "}
                                                         {/* Set to black */}
                                                         URL

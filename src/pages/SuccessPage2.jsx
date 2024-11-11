@@ -15,7 +15,7 @@ const SuccessPage = () => {
     const navigate = useNavigate();
 
     const handleContinueClick = () => {
-        navigate("/review");
+        navigate("/details2");
     };
 
     return (
@@ -36,7 +36,7 @@ const SuccessPage = () => {
                     Successfully built
                 </h1>
                 <h2 className="text-2xl font-semibold mb-8">
-                    Chapter: Change Awareness
+                    Chapter: Online Store
                 </h2>
 
                 {/* Bonus Tips */}

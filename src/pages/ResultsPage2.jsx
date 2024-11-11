@@ -3,7 +3,7 @@ import axios from "axios";
 import { useNavigate, useLocation } from "react-router-dom";
 import { ChevronLeft } from "lucide-react";
 
-const ResultsPage = () => {
+const ResultsPage2 = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const [loading, setLoading] = useState(true);
@@ -86,4 +86,4 @@ const ResultsPage = () => {
     );
 };
 
-export default ResultsPage;
+export default ResultsPage2;
