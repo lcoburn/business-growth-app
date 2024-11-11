@@ -5,7 +5,8 @@ import HomePage from "./pages/HomePage";
 import MarketingStrategy from "./pages/MarketingStrategy";
 import Question1Page from "./pages/Question1Page";
 import Question2Page from "./pages/Question2Page";
-import LoadingScreen from "./pages/LoadingScreen";
+import LoadingScreen1 from "./pages/LoadingScreen1";
+import LoadingScreen2 from "./pages/LoadingScreen2";
 import SuccessPage from "./pages/SuccessPage";
 import WebsiteReview from "./pages/WebsiteReview";
 import DetailsPage1 from "./pages/DetailsPage1";
@@ -22,7 +23,8 @@ function App() {
                 <Route path="/strategy" element={<MarketingStrategy />} />
                 <Route path="/question1" element={<Question1Page />} />
                 <Route path="/question2" element={<Question2Page />} />
-                <Route path="/loading" element={<LoadingScreen />} />
+                <Route path="/loading1" element={<LoadingScreen1 />} />
+                <Route path="/loading2" element={<LoadingScreen2 />} />
                 <Route path="/success" element={<SuccessPage />} />
                 <Route path="/review" element={<WebsiteReview />} />
                 <Route path="/details1" element={<DetailsPage1 />} />

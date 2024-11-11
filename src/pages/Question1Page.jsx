@@ -15,7 +15,7 @@ const Question1Page = () => {
     const navigate = useNavigate();
 
     const handleAgreeClick = () => {
-        navigate("/loading");
+        navigate("/loading1");
     };
 
     const handleBackClick = () => {
