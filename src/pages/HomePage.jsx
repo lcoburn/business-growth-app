@@ -7,14 +7,13 @@ import {
     Users,
     Award,
     ChevronRight,
-} from "lucide-react"; // Added ChevronRight
+} from "lucide-react";
 import homeImage from "../assets/images/home_banner_image.png";
-import { getUserProfile } from "../utils/userProfile.jsx"; // Note the .js extension
-const profile = getUserProfile(); // Call the function to get the profile
-console.log(profile.firstName);
+import { getUserProfile } from "../utils/userProfile.jsx";
 
 const HomePage = () => {
     const navigate = useNavigate();
+    const profile = getUserProfile(); // Will now never be null
 
     const handlePlanClick = () => {
         navigate("/strategy");
@@ -32,7 +31,7 @@ const HomePage = () => {
             {/* Welcome Section */}
             <div className="px-4 py-2">
                 <h1 className="text-2xl font-semibold">
-                    Welcome, {profile.firstName}
+                    Welcome{profile.firstName ? `, ${profile.firstName}` : ""}
                 </h1>
             </div>
 
@@ -56,11 +55,11 @@ const HomePage = () => {
                     className="w-full bg-[#62A157] text-white rounded-lg py-3 px-4 mt-3 flex justify-between items-center"
                 >
                     <span>
-                        Your personalised plan for your {profile.businessType}{" "}
-                        Company in the {profile.country}
+                        {profile.businessType && profile.country
+                            ? `Your personalised plan for your ${profile.businessType} Company in ${profile.country}`
+                            : "Create your personalised business plan"}
                     </span>
-                    <ChevronRight className="w-6 h-6" />{" "}
-                    {/* Replaced text arrow */}
+                    <ChevronRight className="w-6 h-6" />
                 </button>
             </div>
 

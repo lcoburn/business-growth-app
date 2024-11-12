@@ -18,18 +18,29 @@ const ResultsPage1 = () => {
 
     useEffect(() => {
         const fetchBusinessAdvice = async () => {
+            // Only fetch if we have the required profile data
+            if (!profile?.businessType || !profile?.country) {
+                setError("Please complete your profile first");
+                setLoading(false);
+                return;
+            }
+
             try {
                 setLoading(true);
                 const requestData = {
-                    company: profile.businessType || "Unknown Business",
-                    country: profile.country || "Unknown Country",
+                    company: profile.businessType,
+                    country: profile.country,
                     assistant_id: "asst_Nn2xCojT6NFQ416VrCmykWN3",
                 };
 
                 console.log("Sending request with data:", requestData);
 
+                const baseUrl = import.meta.env.PROD
+                    ? "https://stratagease-test-backend.herokuapp.com"
+                    : "http://localhost:8000";
+
                 const response = await axios.post(
-                    "http://localhost:8000/get-business-advice",
+                    `${baseUrl}/get-business-advice`,
                     requestData,
                     {
                         headers: {
