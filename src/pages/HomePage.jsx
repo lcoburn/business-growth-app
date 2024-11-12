@@ -9,6 +9,9 @@ import {
     ChevronRight,
 } from "lucide-react"; // Added ChevronRight
 import homeImage from "../assets/images/home_banner_image.png";
+import { getUserProfile } from "../utils/userProfile.jsx"; // Note the .js extension
+const profile = getUserProfile(); // Call the function to get the profile
+console.log(profile.firstName);
 
 const HomePage = () => {
     const navigate = useNavigate();
@@ -28,7 +31,9 @@ const HomePage = () => {
 
             {/* Welcome Section */}
             <div className="px-4 py-2">
-                <h1 className="text-2xl font-semibold">Welcome, Raewyn</h1>
+                <h1 className="text-2xl font-semibold">
+                    Welcome, {profile.firstName}
+                </h1>
             </div>
 
             {/* Hero Section */}
@@ -51,8 +56,8 @@ const HomePage = () => {
                     className="w-full bg-[#62A157] text-white rounded-lg py-3 px-4 mt-3 flex justify-between items-center"
                 >
                     <span>
-                        Your personalised plan for your Marketing Company in the
-                        UK
+                        Your personalised plan for your {profile.businessType}{" "}
+                        Company in the {profile.country}
                     </span>
                     <ChevronRight className="w-6 h-6" />{" "}
                     {/* Replaced text arrow */}
