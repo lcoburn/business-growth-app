@@ -45,6 +45,7 @@ const ResultsPage1 = () => {
                     {
                         headers: {
                             "Content-Type": "application/json",
+                            Accept: "application/json",
                         },
                     }
                 );
