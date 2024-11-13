@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useNavigate, useLocation } from "react-router-dom";
+import ReactMarkdown from "react-markdown";
+import { useNavigate } from "react-router-dom";
 import { ChevronLeft } from "lucide-react";
 import { getUserProfile } from "../utils/userProfile.jsx";
 
 const ResultsPage1 = () => {
     const navigate = useNavigate();
-    const location = useLocation();
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const [advice, setAdvice] = useState(null);
@@ -18,7 +18,6 @@ const ResultsPage1 = () => {
 
     useEffect(() => {
         const fetchBusinessAdvice = async () => {
-            // Only fetch if we have the required profile data
             if (!profile?.businessType || !profile?.country) {
                 setError("Please complete your profile first");
                 setLoading(false);
@@ -32,8 +31,6 @@ const ResultsPage1 = () => {
                     country: profile.country,
                     assistant_id: "asst_Nn2xCojT6NFQ416VrCmykWN3",
                 };
-
-                console.log("Sending request with data:", requestData);
 
                 const baseUrl = import.meta.env.PROD
                     ? "https://stratagease-test-backend.herokuapp.com"
@@ -50,11 +47,8 @@ const ResultsPage1 = () => {
                     }
                 );
 
-                console.log("Full API Response:", response);
                 setAdvice(response.data.advice);
             } catch (err) {
-                console.error("Full API Error:", err);
-                console.error("Error response data:", err.response?.data);
                 setError(
                     err.response?.data?.detail ||
                         "Failed to load business advice"
@@ -107,9 +101,9 @@ const ResultsPage1 = () => {
                             </p>
                             <div className="mt-4">
                                 <strong>Advice:</strong>
-                                <p className="mt-2 whitespace-pre-wrap">
-                                    {advice}
-                                </p>
+                                <div className="mt-2">
+                                    <ReactMarkdown>{advice}</ReactMarkdown>
+                                </div>
                             </div>
                         </div>
                     )}
