@@ -33,7 +33,7 @@ const ResultsPage1 = () => {
                 };
 
                 const baseUrl = import.meta.env.PROD
-                    ? "https://stratagease-test-backend-d3a3a58fe77f.herokuapp.com/"
+                    ? "https://stratagease-test-backend-d3a3a58fe77f.herokuapp.com"
                     : "http://localhost:8000";
 
                 const response = await axios.post(
