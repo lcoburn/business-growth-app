@@ -1,4 +1,3 @@
-// utils/userProfile.js
 export const getUserProfile = () => {
     const profile = localStorage.getItem("userProfile");
     return profile
@@ -8,6 +7,11 @@ export const getUserProfile = () => {
               lastName: "",
               businessType: "",
               country: "",
-              // Add any other fields that your app uses with empty defaults
+              question1Answer: null, // Add the question1Answer field
+              isRemote: null, // true = remote, false = onsite
           };
+};
+
+export const setUserProfile = (newProfile) => {
+    localStorage.setItem("userProfile", JSON.stringify(newProfile));
 };

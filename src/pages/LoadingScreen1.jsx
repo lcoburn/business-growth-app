@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { ChevronLeft, Bell } from "lucide-react";
+import { getWebsiteInfo } from "../utils/websiteInfo";
 
 const LoadingScreen = () => {
     const navigate = useNavigate();
     const [progress, setProgress] = useState(0);
     const [showButton, setShowButton] = useState(false);
+    // const websiteInfo = getWebsiteInfo();
+    // console.log("Accumulated user information:", websiteInfo);
 
     useEffect(() => {
         const duration = 2000; // 2 seconds for the animation

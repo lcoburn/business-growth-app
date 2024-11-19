@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
     ChevronLeft,
@@ -10,18 +10,33 @@ import {
     MoreHorizontal,
     Info,
 } from "lucide-react";
+import { getUserProfile, setUserProfile } from "../utils/userProfile";
 
 const Question1Page = () => {
     const navigate = useNavigate();
+    const [answer, setAnswer] = useState(
+        getUserProfile().question1Answer || null
+    );
 
-    const handleAgreeClick = () => {
+    const handleAnswerClick = (value) => {
+        setAnswer(value);
+
+        // Retrieve the existing user profile
+        const existingProfile = getUserProfile();
+
+        // Update the user profile with the new answer
+        setUserProfile({
+            ...existingProfile,
+            question1Answer: value,
+        });
+
+        // Navigate to the next page
         navigate("/loading1");
     };
 
     const handleBackClick = () => {
         navigate(-1);
     };
-
     return (
         <div className="min-h-screen bg-navy-900 text-white pb-16">
             {/* Top Navigation */}
@@ -62,19 +77,7 @@ const Question1Page = () => {
                         <Info className="w-5 h-5 text-navy-900" />
                     </div>
 
-                    <div className="space-y-4">
-                        <p className="text-base text-navy-900">
-                            Customers often want new services?
-                        </p>
-                        <p className="text-base text-navy-900">
-                            The local market is always evolving?
-                        </p>
-                        <p className="text-base text-navy-900">
-                            Your business environment looks very different each
-                            year? [Click the circle 'i' icon for more
-                            information and tips on answering.]
-                        </p>
-                    </div>
+                    <div className="space-y-4">{/* (unchanged) */}</div>
 
                     {/* Answer Section */}
                     <div className="mt-8">
@@ -83,14 +86,22 @@ const Question1Page = () => {
                         </p>
                         <div className="flex gap-3">
                             <button
-                                onClick={handleAgreeClick}
-                                className="flex-1 bg-white hover:bg-gray-600 text-black border border-black font-medium py-2 px-4 rounded-full transition-colors"
+                                onClick={() => handleAnswerClick("agree")}
+                                className={`flex-1 bg-white hover:bg-gray-600 text-black border border-black font-medium py-2 px-4 rounded-full transition-colors ${
+                                    answer === "agree"
+                                        ? "bg-gray-600 text-gray-500"
+                                        : ""
+                                }`}
                             >
                                 Agree
                             </button>
                             <button
-                                className="flex-1 bg-white text-black border border-black font-medium py-2 px-4 rounded-full cursor-not-allowed"
-                                disabled
+                                onClick={() => handleAnswerClick("disagree")}
+                                className={`flex-1 bg-white text-black border border-black font-medium py-2 px-4 rounded-full transition-colors ${
+                                    answer === "disagree"
+                                        ? "bg-gray-600 text-gray-500"
+                                        : ""
+                                }`}
                             >
                                 Disagree
                             </button>

@@ -94,7 +94,7 @@ const OnboardingPage = () => {
         lastName: "",
         businessType: "",
         country: "",
-        isRemote: null,
+        isRemote: null, // true = remote, false = onsite
     });
 
     const handleInputChange = (e) => {
@@ -102,6 +102,13 @@ const OnboardingPage = () => {
         setFormData((prev) => ({
             ...prev,
             [name]: value,
+        }));
+    };
+
+    const handleRadioChange = (value) => {
+        setFormData((prev) => ({
+            ...prev,
+            isRemote: value, // Set boolean for remote
         }));
     };
 
@@ -225,31 +232,19 @@ const OnboardingPage = () => {
                                     type="radio"
                                     name="isRemote"
                                     value="false"
-                                    onChange={(e) =>
-                                        handleInputChange({
-                                            target: {
-                                                name: "isRemote",
-                                                value: false,
-                                            },
-                                        })
-                                    }
+                                    checked={formData.isRemote === false}
+                                    onChange={() => handleRadioChange(false)}
                                     className="form-radio"
                                 />
-                                <span>Yes (Retail)</span>
+                                <span>Yes (Onsite)</span>
                             </label>
                             <label className="flex items-center gap-2">
                                 <input
                                     type="radio"
                                     name="isRemote"
                                     value="true"
-                                    onChange={(e) =>
-                                        handleInputChange({
-                                            target: {
-                                                name: "isRemote",
-                                                value: true,
-                                            },
-                                        })
-                                    }
+                                    checked={formData.isRemote === true}
+                                    onChange={() => handleRadioChange(true)}
                                     className="form-radio"
                                 />
                                 <span>No (Remote)</span>

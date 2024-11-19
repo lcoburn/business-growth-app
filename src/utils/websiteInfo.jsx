@@ -3,26 +3,31 @@
 // Get all website information
 export const getWebsiteInfo = () => {
     const info = localStorage.getItem("websiteInfo");
-    return info ? JSON.parse(info) : null;
+    return info ? JSON.parse(info) : {};
+};
+
+// Set website information
+export const setWebsiteInfo = (newInfo) => {
+    const existingInfo = getWebsiteInfo();
+    const updatedInfo = { ...existingInfo, ...newInfo };
+    localStorage.setItem("websiteInfo", JSON.stringify(updatedInfo));
 };
 
 // Get specific website status
 export const hasWebsite = () => {
     const info = getWebsiteInfo();
-    return info ? info.hasWebsite : false;
+    return info.hasWebsite || false;
 };
 
 // Get website URL
 export const getWebsiteUrl = () => {
     const info = getWebsiteInfo();
-    return info ? info.websiteUrl : "";
+    return info.websiteUrl || "";
 };
 
 // Get descriptive text based on website status
 export const getWebsiteDescription = () => {
     const info = getWebsiteInfo();
-    if (!info) return null;
-
     if (info.hasWebsite) {
         return `Your website (${info.websiteUrl}) will be analyzed`;
     } else {

@@ -18,6 +18,8 @@ const ResultsPage1 = () => {
 
     useEffect(() => {
         const fetchBusinessAdvice = async () => {
+            console.log("**", profile);
+
             if (!profile?.businessType || !profile?.country) {
                 setError("Please complete your profile first");
                 setLoading(false);
@@ -30,6 +32,10 @@ const ResultsPage1 = () => {
                     company: profile.businessType,
                     country: profile.country,
                     assistant_id: "asst_Nn2xCojT6NFQ416VrCmykWN3",
+                    question:
+                        "Over the past few years, have you felt that: Your local market is changing quickly?",
+                    answer: profile.question1Answer,
+                    isRemote: profile.isRemote,
                 };
 
                 const baseUrl = import.meta.env.PROD
